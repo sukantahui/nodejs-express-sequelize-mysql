@@ -1,0 +1,81 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+.venv
+./tag/.venv
+./tag_eel/.venv
+./tag_eel_readymade/.venv
+./tag_eel_readymade/.venv
+./tag_eel/__pycache__
+./tag_eel/build/*
+./tag_eel_readymade/build/*
+./tag_eel/build
+./tag_eel_readymade/build
+/build
+./tag_eel/dist
+./tag_eel_readymade/dist
+__pycache__
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+/gold_api/vendor
+/gold_api/vendor/*
+/gold_api/.env
+gold_api/.env
+# dependencies
+/node_modules
+./tag_eel//node_modules
+/vendor
+/gold_api/vendor
+/gold_api/vendor/*
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+.dist/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+package-lock.json
+tag_eel/build/
+tag_eel/build/app/base_library.zip
+tag_eel/build/app/Analysis-00.toc
+tag_eel/build/app/app.exe.manifest
+tag_eel/build/app/app.pkg
+tag_eel/build/app/EXE-00.toc
+tag_eel/build/app/PKG-00.toc
+tag_eel/build/app/PYZ-00.pyz
+tag_eel/build/app/PYZ-00.toc
+tag_eel/build/app/warn-app.txt
+tag_eel/build/app/xref-app.html
