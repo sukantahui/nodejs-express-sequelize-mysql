@@ -11,6 +11,8 @@ module.exports = app => {
     router.post("/", customers.create);
     // Retrieve all Tutorials
     router.get("/", customers.findAll);
+
+    router.get("/opBalanceBetween/:start/:end", customers.openingBalanceBetween);
     // // // Retrieve all published Tutorials
     // router.get("/published", tutorials.findAllPublished);
     // // // Retrieve a single Tutorial with id

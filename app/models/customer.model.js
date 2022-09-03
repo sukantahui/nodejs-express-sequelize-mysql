@@ -10,6 +10,10 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.STRING,
             allowNull: false
         },
+        opening_balance: {
+            type: Sequelize.BIGINT,
+            allowNull: true
+        },
         email: {
             type: Sequelize.STRING,
             allowNull: false
