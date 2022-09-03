@@ -2,6 +2,32 @@ const db =require("../models");
 const Customer = db.customers;
 const Op = db.Sequelize.Op;
 
+
+exports.seed = (req, res) => {
+    // Create a Tutorial
+  
+    
+    Customer.bulkCreate([
+        {name: "Sukanta Hui", email: "sukantahui@gmail.com"},
+        {name: "Tanusree Hui", email: "tanusreehui@gmail.com"},
+        {name: "Riddhiman Hui", email: "riddhimanhui@gmail.com"},
+        {name: "Ritaja Ghosh", email: "Ritaja Ghsoh@gmail.com"},
+        {name: "Sreeparna Das", email: "sreeparnadas@gmail.com"},
+        {name: "Priyam Sandhukhan", email: "priyam Sandhukhan@gmail.com"},
+        {name: "Sumit Das", email: "sumitdas@gmail.com"},
+        {name: "Riya Roy", email: "riyaroy@gmail.com"}
+    ]).then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Customers."
+      });
+    });
+    
+};
+
 exports.create = (req, res) => {
     // Validate request
     if (!req.body.name) {

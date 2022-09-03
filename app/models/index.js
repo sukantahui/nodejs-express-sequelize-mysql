@@ -18,4 +18,5 @@ db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.customers = require("./customer.model.js")(sequelize, Sequelize);
 db.orders = require("./order.model.js")(sequelize, Sequelize);
 db.customers.hasMany(db.orders, {foreignKey: "customer_id",});
+
 module.exports = db;

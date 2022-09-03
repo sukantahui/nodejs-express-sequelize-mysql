@@ -5,6 +5,8 @@
 module.exports = app => {
     const customers = require("../controllers/customer.controller");
     var router = require("express").Router();
+    // Seeding Customers
+    router.get("/seeds", customers.seed);
     // Create a new Tutorial
     router.post("/", customers.create);
     // Retrieve all Tutorials
