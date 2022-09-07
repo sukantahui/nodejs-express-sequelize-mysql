@@ -12,8 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 // simple route
 
 
-const db = require("./app/models");
-db.sequelize.sync()
+const db = require("./models");
+db.sequelize.sync({force: true})
   .then(() => {
     console.log("Synced db.");
     
@@ -26,8 +26,8 @@ db.sequelize.sync()
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to CODER application." });
 });
-require("./app/routes/turorial.routes")(app);
-require("./app/routes/customer.routes")(app);
+require("./routes/user.routes")(app);
+require("./routes/customer.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
