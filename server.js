@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 const db = require("./models");
-db.sequelize.sync({force: true})
+db.sequelize.sync()
   .then(() => {
     console.log("Synced db.");
     
@@ -26,8 +26,10 @@ db.sequelize.sync({force: true})
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to CODER application." });
 });
+
 require("./routes/user.routes")(app);
 require("./routes/customer.routes")(app);
+require("./routes/order.routes")(app);
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
