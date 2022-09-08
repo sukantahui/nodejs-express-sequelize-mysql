@@ -151,14 +151,15 @@ exports.update = (req, res) => {
     });
 };
 
-exports.delete = (req, res) => {
+ exports.delete =async (req, res) => {
   const id = req.params.id;
+  const customer =await db.Customer.findByPk(id);
   db.Customer.destroy({
     where: { id: id }
   })
     .then(num => {
       if (num == 1) {
-        res.send({
+        res.send({customer: customer,
           message: "Customer was deleted successfully!"
         });
       } else {
