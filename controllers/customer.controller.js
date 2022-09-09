@@ -177,7 +177,12 @@ exports.update = (req, res) => {
 
 exports.withOrder= async (req, res)=>{
   let data = await db.Customer.findAll({
-    attributes: ['customerName','email'],
+    attributes: [
+                  [db.sequelize.fn('upper', db.sequelize.col('customerName')),'customerName']
+                  ,'email'
+                  ,[db.sequelize.fn('now'),'current_time']
+                  ,[db.sequelize.col('Orders.total'),'order_total']
+                ],
     include:[
       {model: db.Order, attributes: ['id','total']}
     ]
