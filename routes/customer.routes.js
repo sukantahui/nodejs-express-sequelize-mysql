@@ -15,5 +15,7 @@ module.exports = app => {
     router.put("/:id", customer.update);
     router.delete("/:id", customer.delete);
 
+    router.get("/special/witthOrder", customer.withOrder);
+
     app.use('/api/customers', router);
   };

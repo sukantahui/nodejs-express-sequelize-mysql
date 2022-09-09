@@ -140,7 +140,7 @@ exports.update = (req, res) => {
         // });
       } else {
         res.send({
-          message: `Cannot update Customer with id=${id}. Maybe Tutorial was not found or req.body is empty!`
+          message: `Cannot update Customer with id=${id}. Maybe Customer was not found or req.body is empty!`
         });
       }
     })
@@ -174,5 +174,15 @@ exports.update = (req, res) => {
       });
     });
 };
+
+exports.withOrder= async (req, res)=>{
+  let data = await db.Customer.findAll({
+    attributes: ['customerName','email'],
+    include:[
+      {model: db.Order, attributes: ['id','total']}
+    ]
+  });
+  res.send(data);
+}
 
   
